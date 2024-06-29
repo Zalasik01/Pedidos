@@ -165,7 +165,8 @@ checkoutBtn.addEventListener("click", function(){
     )
     }).join("")
 
-    const message = encodeURIComponent(cartItems)
+    const greeting = getGreeting(); // Obter saudação
+    const message = encodeURIComponent(`${greeting} *Pedido: ${orderNumber}*, aqui estão os itens do seu pedido: ${cartItems}`);
     const phone = "5547991884707"
 
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addresInput.value} Observação: ${observationInput.value}`, "_blank")
@@ -177,6 +178,19 @@ checkoutBtn.addEventListener("click", function(){
     closeModalBtn.click();
     updateCartModal();
 })
+
+// Função para gerar um identificador único baseado na data e hora
+function getUniqueOrderNumber() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    return `Pedido_${year}${month}${day}_${hours}${minutes}${seconds}`;
+}
 
 // Verificar hora
 function checkRestaurantOpen() {
@@ -195,4 +209,16 @@ if(isOpen){
 }else{
     spanItem.classList.remove("bg-green-600")
     spanItem.classList.add("bg-red-500")
+}
+
+// Função para determinar a saudação baseada no horário
+function getGreeting() {
+    const now = new Date();
+    const hour = now.getHours();
+
+    if (hour >= 18 || hour < 12) {
+        return "Boa noite";
+    } else {
+        return "Boa tarde";
+    }
 }
