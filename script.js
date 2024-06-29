@@ -114,8 +114,46 @@ function removeItemCart(name){
             updateCartModal();
             return;
         }
-
         cart.splice(index, 1);
         updateCartModal();
     }
+}
+
+// Função de captação de endereço
+addresInput.addEventListener("input", function(event){
+    let inputValue = event.target.value;
+
+    if(inputValue !== ""){
+        addresInput.classList.remove("border-red-500")
+        addressWarn.classList.add("hidden")
+    }
+})
+
+checkoutBtn.addEventListener("click", function(){
+    if(cart.length === 0) return;
+
+    if(addresInput.value === ""){
+        addressWarn.classList.remove("hidden")
+        addresInput.classList.add("border-red-500")
+        return;
+    }
+
+})
+// Verificar hora
+function checkRestaurantOpen() {
+    const data = new Date();
+    const hora = data.getHours();
+    const minutos = data.getMinutes();
+    return (hora >= 18 && (hora < 23 || (hora === 23 && minutos < 30))); // true
+}
+
+const spanItem = document.getElementById("date-span")
+const isOpen = checkRestaurantOpen();
+
+if(isOpen){
+    spanItem.classList.remove("bg-red-500");
+    spanItem.classList.add("bg-green-600")
+}else{
+    spanItem.classList.remove("bg-green-600")
+    spanItem.classList.add("bg-red-500")
 }
