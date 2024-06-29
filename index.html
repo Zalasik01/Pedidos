@@ -148,12 +148,11 @@
     <!-- FIM MENU -->
 
     <!-- MODEL CARD -->
-    <div id="cart-modal"
-    class="bg-black/60 w-full h-full z-[99] fixed top-0 left-0 hidden items-center justify-center">
-        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+    <div id="cart-modal" class="bg-black/60 w-full h-full z-[99] fixed top-0 left-0 hidden items-center justify-center">
+        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px] h-[90%] overflow-y-auto">
             <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
             <div id="cart-items" class="justify-between mb-2 flex-col"></div>
-
+    
             <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
             <p class="font-bold mt-4">Endereço de entrega</p>
             <input type="text" placeholder="Digite seu endereço completo" class="w-full border-2 p-1 rounded my-1" id="address">
@@ -163,14 +162,14 @@
                 <button id="checkout-btn" class="bg-green-500 rounded text-white px-4 py-1">Finalizar Pedido</button>
             </div>
         </div>
-    </div>
+    </div>    
     <!-- FIM MODEL CARD -->
 
     <!-- INICIO FOOTER -->
     <footer class="w-full bg-red-500 hover:bg-red-600 duration-300 py-2 fixed bottom-0 z-40 flex items-center justify-center">
-        <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
-            (<span id="cart-count">0</span>)
-        Veja meu carrinho
+        <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">            
+        Ver sacola (<span id="cart-count">0</span>)
+        <p class="font-bold">Total: R$ <span id="footer-cart-total">0.00</span></p>
         <i class="fa fa-cart-plus text-lg text-white"></i>
         </button>
     </footer>

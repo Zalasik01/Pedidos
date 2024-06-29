@@ -901,6 +901,14 @@ video {
   height: 100%;
 }
 
+.h-\[90\%\] {
+  height: 90%;
+}
+
+.min-h-\[90\%\] {
+  min-height: 90%;
+}
+
 .w-28 {
   width: 7rem;
 }

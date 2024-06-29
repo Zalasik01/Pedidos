@@ -38,7 +38,6 @@ menu.addEventListener("click", function(event){
     }
 })
 
-
 // Função para adicionar no carrinho
 function addToCart(name, price){
     const existingItem = cart.find(item => item.name === name)
@@ -84,6 +83,8 @@ function updateCartModal() {
         total += item.price * item.quantity;
 
         cartItemsContainer.appendChild(cartItemElement)
+        document.getElementById('cart-total').innerText = total.toFixed(2);
+        document.getElementById('footer-cart-total').innerText = total.toFixed(2)
 
     })
 
@@ -91,7 +92,7 @@ function updateCartModal() {
         style: "currency",
         currency: "BRL"
     });
-    cartCounter.innerHTML = cart.length;    
+    cartCounter.innerHTML = cart.length;
 }
 
 // Função para remover item do carrinho
@@ -125,9 +126,10 @@ addresInput.addEventListener("input", function(event){
 
     if(inputValue !== ""){
         addresInput.classList.remove("border-red-500")
-        addressWarn.classList.add("hidden")
+        addressWarn.classList.add("hidden") 
     }
 })
+
 
 // Finalizar pedido
 checkoutBtn.addEventListener("click", function(){
@@ -163,7 +165,7 @@ checkoutBtn.addEventListener("click", function(){
     }).join("")
 
     const message = encodeURIComponent(cartItems)
-    const phone = "47991884707"
+    const phone = "5547991884707"
 
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addresInput.value}`, "_blank")
     cart.length = 0;
