@@ -263,7 +263,7 @@ function checkRestaurantOpen() {
     const data = new Date();
     const hora = data.getHours();
     const minutos = data.getMinutes();
-    return (hora >= 18 && (hora < 23 || (hora === 23 && minutos < 30))); // true
+    return (hora >= 08 && (hora < 23 || (hora === 23 && minutos < 30))); // true
 }
 
 const spanItem = document.getElementById("date-span")
