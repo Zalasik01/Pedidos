@@ -266,6 +266,17 @@ function checkRestaurantOpen() {
     return (hora >= 18 && (hora < 23 || (hora === 23 && minutos < 30))); // true
 }
 
+const spanItem = document.getElementById("date-span")
+const isOpen = checkRestaurantOpen();
+
+if(isOpen){
+    spanItem.classList.remove("bg-red-500");
+    spanItem.classList.add("bg-green-600")
+}else{
+    spanItem.classList.remove("bg-green-600")
+    spanItem.classList.add("bg-red-500")
+}
+
 // Determinar saudação com base no horário
 function getGreeting() {
     const now = new Date();
