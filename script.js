@@ -275,6 +275,7 @@ if(isOpen){
 }else{
     spanItem.classList.remove("bg-green-600")
     spanItem.classList.add("bg-red-500")
+    spanItem.classList.add("hover:bg-red-700")
 }
 
 // Determinar saudação com base no horário
