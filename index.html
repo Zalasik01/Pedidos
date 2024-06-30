@@ -30,7 +30,8 @@
     </header>
     <!-- FIM HEADER -->
 
-    <H2 class="text-2xl font-bold text-center mt-9 mb-6 md:text-3xl">Conheça nosso menu</H2>
+    <H2 class="text-2xl font-bold text-center mt-9 md:text-3xl">Conheça nosso menu</H2>
+    <p class="font-bold text-center mb-6 text-red-500">Pedido minimo R$ 20,00 (Sem contar taxa de entrega)</p>
 
     <!-- MENU -->
     <div id="menu">
@@ -158,12 +159,31 @@
             <input type="text" placeholder="Observações" class="w-full border-2 p-1 rounded my-1" id="observacao">
 
             <p class="font-bold mt-4">Endereço de entrega</p>
-            <input type="text" placeholder="Digite seu endereço completo" class="w-full border-2 p-1 rounded my-1" id="address">
+            <input type="text" placeholder="Digite seu endereço completo" class="w-[80%] border-2 p-1 rounded my-1" id="address">
             <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo</p>
-
+            <input type="text" placeholder="Número" class="w-[15%] border-2 p-1 rounded my-1" id="house-number">
+            <p class="text-red-500 hidden" id="house-number-warn">Informe o número</p>
+            
+            <p class="font-bold mt-4">Nome completo</p>
+            <input type="text" placeholder="Digite seu nome completo" class="w-full border-2 p-1 rounded my-1" id="name-input">
+            <p class="text-red-500 hidden" id="name-input-warn">Digite seu nome completo</p>
+            
+            <div id="pagament-input">
+                <p class="font-bold mt-4">Forma de pagamento</p>
+                <input type="radio" id="Dinheiro" name="forma-pagamento" value="Dinheiro">
+                <label for="Dinheiro">Dinheiro</label><br>
+            
+                <input type="radio" id="Cartão de Crédito" name="forma-pagamento" value="Cartão de Crédito">
+                <label for="Cartão de Crédito">Cartão de Crédito</label><br>
+            
+                <input type="radio" id="Débito" name="forma-pagamento" value="Débito">
+                <label for="Débito">Débito</label><br>
+                <p class="text-red-500 hidden" id="pagament-input-warn">Escolha uma forma de pagamento</p>
+            </div>
+            <p class="font-bold">Total: <span id="cart-total-pgto">0.00</span></p>
             <div class="flex items-center justify-between mt-5 w-full">
-                <button id="close-modal-btn" class="bg-white hover:bg-red-600 hover:text-white duration-300 rounded px-4 py-1">Fechar</button>
-                <button id="checkout-btn" class="bg-green-500 rounded text-white px-4 py-1">Finalizar Pedido</button>
+                <button id="close-modal-btn" class="bg-white hover:bg-red-600 hover:shadow-lg hover:text-white duration-300 rounded px-4 py-1">Fechar</button>
+                <button id="checkout-btn" class="bg-green-500 rounded text-white px-4 py-1 hover:bg-green-600 duration-300 shadow-lg">Finalizar Pedido</button>
             </div>
         </div>
     </div>    
