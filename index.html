@@ -15,19 +15,19 @@
 <body>
     <!-- HEADER -->
     <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
-        <a href="./admin/admin.index" class="inline-block text-white text-[8px] text-right float-right mr-9 mt-2">
+        <a href="./admin/admin.index" class="inline-block text-white text-xs md:text-lg text-right font-normal float-right mr-5 mt-2 hover:text-red-500 duration-300 shadow-2xl">
             <p class="font-bold">Acessar</p>
-        </a>             
-                      
+        </a>        
+
         <div class="w-full h-full flex flex-col justify-center items-center">
-            <img class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
+            <img class="w-32 h-32 rounded-full shadow-2xl hover:scale-110 duration-200"
             src="assets/hamb-8.png" alt="Logo">
             <h1 class="text-white text-4xl mt-4 mb-2 font-bold">
                 Hamburgueria - Modelo 1
             </h1>
 
             <span class="text-white font-medium">Rua modelo, Centro - Blumenau SC</span>
-            <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">    
+            <div class="bg-green-600 px-4 py-1 rounded-lg mt-5 cursor-pointer hover:bg-green-700 duration-300 shadow-2xl" id="date-span">    
                 <span class="text-white font-medium">Seg á Dom - 18:00 as 23:30</span>
             </div>
         </div>
@@ -187,8 +187,8 @@
             </div>
             <p class="font-bold">Total: <span id="cart-total-pgto">0.00</span></p>
             <div class="flex items-center justify-between mt-5 w-full">
-                <button id="close-modal-btn" class="bg-white hover:bg-red-600 hover:shadow-lg hover:text-white duration-300 rounded px-4 py-1">Fechar</button>
-                <button id="checkout-btn" class="bg-green-500 rounded text-white px-4 py-1 hover:bg-green-600 duration-300 shadow-lg">Finalizar Pedido</button>
+                <button id="close-modal-btn" class="bg-white hover:bg-red-600 hover:shadow-2xl hover:text-white duration-300 rounded px-4 py-1">Fechar</button>
+                <button id="checkout-btn" class="bg-green-500 rounded text-white px-4 py-1 hover:bg-green-600 duration-300 shadow-2xl">Finalizar Pedido</button>
             </div>
         </div>
     </div>    

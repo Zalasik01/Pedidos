@@ -199,6 +199,7 @@ checkoutBtn.addEventListener("click", function(){
         return;
     }
 
+
     if(cart.length === 0) return;
     if(addresInput.value === ""){
         addressWarn.classList.remove("hidden")
@@ -216,22 +217,6 @@ checkoutBtn.addEventListener("click", function(){
         return;
     }
 
-    // Verificar se o total é maior ou igual a R$ 20,00
-    const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    if (totalAmount < 20) {
-        Toastify ({
-            text: "O valor mínimo do pedido deve ser de R$ 20,00",
-            duration: 3000,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "center", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-                background: "#EF4444",
-            },
-        }).showToast();
-        return;
-    }
 
     // Validar forma de pagamento
     if (!validatePayment()) {
