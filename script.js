@@ -119,46 +119,6 @@ function removeItemCart(name){
         updateCartModal();
     }
 }
-// Validar pedido mínimo 
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('#orderForm');
-    const totalInput = document.querySelector('#total');
-    const submitButton = document.querySelector('#submitOrder');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const total = parseFloat(totalInput.value);
-
-        if (total < 20) {
-            Toastify({
-                text: "O pedido mínimo é de R$ 20,00. Por favor, adicione mais itens ao seu pedido.",
-                duration: 5000,
-                close: true,
-                gravity: "top",
-                position: "center",
-                stopOnFocus: true,
-                style: {
-                    background: "#EF4444",
-                },
-            }).showToast();
-        } else {
-            // Enviar o pedido
-            Toastify({
-                text: "Pedido enviado com sucesso!",
-                duration: 3000,
-                close: true,
-                gravity: "top",
-                position: "center",
-                stopOnFocus: true,
-                style: {
-                    background: "#10B981",
-                },
-            }).showToast();
-        }
-    });
-});
-
 
 // Capturar endereço
 addresInput.addEventListener("input", function(event){
