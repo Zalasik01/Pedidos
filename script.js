@@ -276,8 +276,15 @@ checkoutBtn.addEventListener("click", function(){
     const greeting = getGreeting(); // Obter saudação
     const selectedPayment = Array.from(pagamentoInputs).find(input => input.checked).id;
 
-    const message = encodeURIComponent(`🤖 ${greeting}. Me chamo *${nameInput.value}*, aqui estão os itens do meu pedido: \n\n${cartItems}\nTotal: R$ ${total}\nForma de pagamento: ${selectedPayment}
-    \n🛵 *Endereço:* ${addresInput.value}, ${houseNumber.value} \n📋 *Observação:* ${observationInput.value}\n🏦 *Forma de pagamento:* ${selectedPayment}`);
+    const message = encodeURIComponent(`🤖 ${greeting}. Me chamo *${nameInput.value}*, aqui estão os itens do meu pedido:\n\n${formatarItensPedido(cartItems)}\nTotal: R$ ${total}\nForma de pagamento: ${selectedPayment}\n\n🛵 *Endereço:* ${addresInput.value}, ${houseNumber.value}\n📋 *Observação:* ${observationInput.value}\n🏦 *Forma de pagamento:* ${selectedPayment}`);
+
+function formatarItensPedido(items) {
+    let formattedItems = "";
+    items.forEach(item => {
+        formattedItems += `• ${item.name}: ${item.quantity} x ${item.price}\n`;
+    });
+    return formattedItems;
+}
     
     const phone = "5547991884707";
     const whatsappLink = `https://wa.me/${phone}?text=${message}`;
