@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../styles/output.css">
+
+    <title>Pedido Online - Admin</title>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-900 bg-home bg-cover bg-center flex flex-col justify-center items-center">
+        <!-- Botão "Voltar ao menu" à direita -->
+        <a href="../index.html" class="absolute top-0 right-0 text-white text-xs md:text-lg font-normal mr-5 mt-2 hover:text-red-500 duration-300 shadow-2xl">
+            <p class="font-bold">Voltar ao menu</p>
+        </a>
+    
+        <!-- Conteúdo centralizado -->
+        <div class="text-center">
+            <img class="w-32 h-32 rounded-full shadow-2xl hover:scale-110 duration-200 mx-auto"
+                 src="../assets/admin.jpg" alt="Logo">
+            <h1 class="text-white text-xs md:text-lg mt-4 mb-2 font-bold">
+                Painel administrativo - Lanchonete modelo 1
+            </h1>
+        </div>
+        <div class="mt-8 flex flex-col justify-center items-center">
+            <input id="username" type="text" class="w-72 md:w-96 xl:w-120 px-4 py-2 mb-6 rounded-lg border border-gray-300 focus:border-red-500 outline-none placeholder-gray-500 text-sm md:text-base" placeholder="Digite seu usuário">
+            
+            <div class="relative w-72 md:w-96 xl:w-120 mb-6">
+                <input id="password" type="password" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-red-500 outline-none placeholder-gray-500 text-sm md:text-base" placeholder="Digite sua senha">
+                <i id="togglePassword" class="fas fa-eye absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500 hover:text-gray-700"></i>
+            </div>
+        
+            <label class="flex items-center w-full ml-6 md:ml-12">
+                <input id="saveUser" type="checkbox" class="mr-2 rounded border-gray-300 focus:border-red-500 outline-none">
+                <span class="text-white text-sm md:text-base">Salvar usuário</span>
+            </label>
+            
+            <button id="validateUser" class="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-200">Validar Usuário</button>
+        </div>
+                     
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>/script>
+</body>
